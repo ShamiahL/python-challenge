@@ -1,1 +1,35 @@
+# import mods
+import os
+import csv
+#set path
+csv_path = path("Resources/budget_data.csv")
+text_file = "Final_Analysis.txt"
+#Set variables
+total_months = []
+total_profits = []
+profit_changes = []
+monthly_changes = []
+previous_value = 0
+with open(csvpath) as csvfile:
+    csvreader = csv.reader(csvfile)
+    csv_header = next(csvreader)
 
+    for row in csvreader:
+        totalmonths.append(row[0])
+        profits.append(int(row[1]))
+for i in range(len(profits) - 1):
+        pc.append(profits[i+1] - profits[i])
+total_months = len(totalmonths)
+sum_profits = sum(profits)
+avg_change = (sum(pc) / len(pc))
+greatest_increase = ((totalmonths[pc.index(max(pc))+1]))
+greatest_decrease = ((totalmonths[pc.index(min(pc))+1]))
+g_increase = max(pc)
+g_decrease = min(pc)
+output = (
+        f'Financial Analysis\n'
+        f'total months: {total_months}\n'
+        f'total profits: {sum_profits}\n'
+        f'average revenue change : {avg_change}\n'
+        f'greatest increase in profits: {greatest_increase} {g_increase}\n'
+        f'greatest decrease in profits: {greatest_decrease} {g_decrease}\n')
